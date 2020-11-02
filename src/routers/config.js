@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { lazy } from 'react';
-import { SmileOutlined } from '@ant-design/icons';
+// import { SmileOutlined } from '@ant-design/icons';
 
 import BasicLayout from '@/layouts/BasicLayout';
 import BlankLayout from '@/layouts/BlankLayout';
@@ -25,6 +25,11 @@ const config = [
             path: '/welcome',
             name: '欢迎页',
             component: lazy(() => import('@/pages/Welcome')),
+          },
+          {
+            path: '/demo',
+            name: '各种组件demo页面',
+            component: lazy(() => import('@/pages/Demo')),
           },
           { path: '/', exact: true, redirect: '/welcome' },
           // { path: '*', exact: true, redirect: '/exception/404' },
