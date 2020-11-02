@@ -8,7 +8,7 @@ const CheckCode = (props) => {
   const changeCode = (e) => {
     setCode(e.target.value)
     if(e.target.value && e.target.value.length === 6){
-      props.onGetCode(e.targaet.value)
+      props.onGetCode(e.target.value)
     }
   }
   useEffect(()=> {

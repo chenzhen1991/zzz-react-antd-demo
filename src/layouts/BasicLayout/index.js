@@ -7,7 +7,7 @@ import './style.less';
 
 const BasicLayout = ({route, children}) => {
   return (
-    <Layout>
+    <Layout className="main-layout">
       <SiderMenu routes={route.childRoutes} />
       {/* 左侧菜单导航 */}
       <Layout className="main-layout-right">

@@ -31,6 +31,26 @@ const config = [
             name: '各种组件demo页面',
             component: lazy(() => import('@/pages/Demo')),
           },
+          {
+            path: '/control',
+            name: '管理页面',
+            childRoutes:[
+              {
+                path: '/control/contact',
+                name: '客户管理页面',
+                component: lazy(() => import('@/pages/Controll/ContactControll')),
+              },
+              {
+                path: `/control/detail`,
+                component: lazy(() => import('@/pages/Controll/ContactDetail')),
+              },
+              {
+                path: '/control/card',
+                name: '卡片管理页面',
+                component: lazy(() => import('@/pages/Controll/CardControll')),
+              },
+            ],
+          },
           { path: '/', exact: true, redirect: '/welcome' },
           // { path: '*', exact: true, redirect: '/exception/404' },
         ],
