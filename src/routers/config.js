@@ -51,8 +51,22 @@ const config = [
               },
             ],
           },
+          {
+            path: '/exception',
+            name: '异常页面',
+            // exact: true,
+            icon: 'warning',
+            childRoutes: [
+              {
+                path: '/exception/404',
+                name: '404',
+                icon: 'frown',
+                component: lazy(() => import('@/pages/Exception/404')),
+              },
+            ],
+          },
           { path: '/', exact: true, redirect: '/welcome' },
-          // { path: '*', exact: true, redirect: '/exception/404' },
+          { path: '*', exact: true, redirect: '/exception/404' },
         ],
       },
     ],

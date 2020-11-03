@@ -65,7 +65,8 @@ const ContactControll = (props) => {
     },
   ];
   const gotoEdit = (record) => {
-    history.push(`/control/detail/${record.key}`)
+    console.log(record)
+    // history.push(`/control/detail/${record.key}`)
   }
   return(
     <div className="contact">

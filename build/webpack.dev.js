@@ -14,14 +14,14 @@ module.exports = merge(commonConfig, {
     historyApiFallback: true,
     compress: true,
     // 接口代理转发
-    // proxy: {
-    //   '/testapi': {
-    //     target: 'https://www.easy-mock.com/mock/5dff0acd5b188e66c6e07329/react-template',
-    //     changeOrigin: true,
-    //     secure: false,
-    //     pathRewrite: { '^/testapi': '' },
-    //   },
-    // },
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:7001',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: { "^/api": "/" },
+      },
+    },
   },
   plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()],
   devtool: 'eval-source-map',

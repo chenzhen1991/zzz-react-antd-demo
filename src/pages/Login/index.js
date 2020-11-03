@@ -1,7 +1,8 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
 import { Form, Input, Button, Checkbox } from 'antd';
-import './style.less'
+import './style.less';
+import { login } from "../../api/login";
 
 
 // class Login extends Component{
@@ -46,9 +47,14 @@ const tailLayout = {
 /* 函数式组件 */
 const Login = () => {
   const history = useHistory()
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    history.push('/welcome')
+  const onFinish = async (values) => {
+    const res = await login({
+      userName: values.username,
+      password: values.password,
+    });
+    if(res && res.code === "200") {
+      history.push('/welcome')
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
